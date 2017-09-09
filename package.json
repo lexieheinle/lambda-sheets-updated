@@ -8,7 +8,7 @@
     "destroy": "claudia destroy",
     "update": "claudia update --no-optional-dependencies",
     "test": "claudia test-lambda --event event.json",
-    "test-scrap": "node lib/search.js"
+    "test-scrap": "node spreadsheet.js"
   },
   "author": "lexieheinle",
   "license": "ISC",
