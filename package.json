@@ -6,7 +6,7 @@
   "scripts": {
     "create": "claudia create --region us-east-1 --api-module app",
     "destroy": "claudia destroy",
-    "update": "claudia update --no-optional-dependencies",
+    "update": "claudia update --no-optional-dependencies --set-env-from-json google-credentials.json",
     "test": "claudia test-lambda --event event.json",
     "test-scrap": "node spreadsheet.js"
   },
@@ -16,5 +16,8 @@
     "bluebird": "^3.5.0",
     "claudia-api-builder": "^2.5.1",
     "google-spreadsheet": "^2.0.4"
-  }
+  },
+  "optionalDependencies": {
+  "aws-sdk": "^2.96.0"
+}
 }

@@ -1,8 +1,11 @@
-const ApiBuilder = require('claudia-api-builder'),
+const ApiBuilder = require('claudia-api-builder');
 const api = new ApiBuilder();
-
+const spreadsheet = require('./lib/spreadsheet.js');
 module.exports = api;
 
 api.get('/update', function (request) {
-  return 'SpreadsheetID: ' + request.queryString.id + ' with name: ' + request.queryString.name;
+  return spreadsheet.getSpreadsheet(request.queryString.id)
+  .then(response => {
+    return response;
+  })
 });
