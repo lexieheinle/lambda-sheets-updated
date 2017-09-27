@@ -3,9 +3,7 @@ const api = new ApiBuilder();
 const spreadsheet = require('./lib/spreadsheet.js');
 module.exports = api;
 api.get('/update', function (request) {
-  console.log(request);
-  console.log(spreadsheet);
-  return spreadsheet.getSpreadsheet(request.queryString.id)
+  return spreadsheet.getSpreadsheet(request.queryString.id, request.queryString.sheet_num, request.queryString.duration)
   .then(response => {
     return response
   })

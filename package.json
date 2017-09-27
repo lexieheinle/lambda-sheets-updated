@@ -7,9 +7,7 @@
     "create": "claudia create --region us-east-1 --api-module app",
     "destroy": "claudia destroy",
     "update": "claudia update --no-optional-dependencies --set-env-from-json google-credentials.json",
-    "test-update": "node app.js",
-    "test": "claudia test-lambda --event event.json",
-    "test-scrap": "node lib/spreadsheet.js"
+    "test-spreadsheet": "node lib/spreadsheet.js"
   },
   "author": "lexieheinle",
   "license": "ISC",
