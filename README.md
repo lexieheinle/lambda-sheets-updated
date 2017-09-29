@@ -7,7 +7,7 @@ Lambda function to keep specific Google Sheets automatically baked out to JSON. 
 3. Run `npm run create`, and Claudia will create the Lambda function for AWS.
 ### Configuring AWS
 The default IAM role sheets-updated-executor doesn't have access to S3, which will hold all the generated JSON, so using the [IAM section of the AWS console website](https://console.aws.amazon.com/iam), find the Roles and then choose the newly created sheets-updated-executor. After selecting that role, attach the AmazonS3FullAccess policy since you need both Read/Write access.
-The function exports the JSON to a S3 bucket named 'sheets-updated' if you want to change that folder name, feel free to do so in [this line of lib/spreadsheet.js](https://github.com/lexieheinle/lambda-sheets-updated/blob/master/lib/spreadsheet.js#L36).
+The function exports the JSON to a S3 bucket named 'sheets-updated' if you want to change that folder name, feel free to do so in [this line of lib/spreadsheet.js](https://github.com/lexieheinle/lambda-sheets-updated/blob/master/lib/spreadsheet.js#L36). *Make sure to save the CORS configuration under the Permissions tab if you can't call the JSON in your code.*
 ### Configuring Google
 Using [these instructions](https://github.com/theoephraim/node-google-spreadsheet#service-account-recommended-method) for the Service Account configuration, make sure your credentials.json file is in the directory, with the name of google-credentials.json. *If you want to change the name, make sure to do so in the package.json update command as well as in the .gitignore.*
 ### Adding to a Google Sheet
