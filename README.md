@@ -42,3 +42,5 @@ If you use IFTTT to build the Google Sheet, the onEdit function won't run during
 ### Debugging
 * Check the CloudWatch logs to see the console.log messages.
 * Use `npm run test-spreadsheet` to test accessing and formatting the JSON.
+### Delete a JSON file
+To delete a JSON file, pass the file_name parameter to the /delete method.

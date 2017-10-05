@@ -11,6 +11,10 @@ api.get('/update', function (request) {
 api.get('/delete', function (request) {
   return spreadsheet.deleteJSON(request.queryString.file_name)
   .then(response => {
-    return response
+    if (response) {
+      return 'JSON file successfully deleted'
+    } else {
+      return 'JSON file wasn\'t deleted'
+    }
   })
 });
