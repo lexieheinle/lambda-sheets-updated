@@ -8,3 +8,9 @@ api.get('/update', function (request) {
     return response
   })
 });
+api.get('/delete', function (request) {
+  return spreadsheet.deleteJSON(request.queryString.file_name)
+  .then(response => {
+    return response
+  })
+});
